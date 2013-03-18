@@ -25,11 +25,12 @@ class Geocoding implements GeocodingInterface
 
     /**
      * @param ServiceInterface $service
+     * @param Result $result
      */
-    public function __construct(ServiceInterface $service = null)
+    public function __construct(ServiceInterface $service = null, Result $result = null)
     {
         $this->service = $service;
-        $this->result = new Result();
+        $this->result = $result ?: new Result();
     }
 
     /**
